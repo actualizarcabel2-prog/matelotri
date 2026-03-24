@@ -3,9 +3,9 @@
 <addon id="repository.matelotri" name="Matelotri Repository" version="1.0.0" provider-name="Agustin">
 	<extension point="xbmc.addon.repository" name="Matelotri Repository">
 		<dir>
-			<info compressed="false">https://actualizarcabel2-prog.github.io/repository.matelotri./addons.xml</info>
-			<checksum>https://actualizarcabel2-prog.github.io/repository.matelotri./addons.xml.md5</checksum>
-			<datadir zip="true">https://actualizarcabel2-prog.github.io/repository.matelotri./</datadir>
+			<info compressed="false">https://actualizarcabel2-prog.github.io/repository.matelotri/addons.xml</info>
+			<checksum>https://actualizarcabel2-prog.github.io/repository.matelotri/addons.xml.md5</checksum>
+			<datadir zip="true">https://actualizarcabel2-prog.github.io/repository.matelotri/</datadir>
 		</dir>
 	</extension>
 	<extension point="xbmc.addon.metadata">

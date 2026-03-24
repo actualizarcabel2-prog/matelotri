@@ -98,9 +98,9 @@ AUTOINSTALL = 'Yes'
 # Addon ID for the repository
 REPOID = 'repository.matelotri'
 # Url to Addons.xml file in your repo folder(this is so we can get the latest version)
-REPOADDONXML = 'https://actualizarcabel2-prog.github.io/repository.matelotri./addons.xml'
+REPOADDONXML = 'https://actualizarcabel2-prog.github.io/repository.matelotri/addons.xml'
 # Url to folder zip is located in
-REPOZIPURL = 'https://actualizarcabel2-prog.github.io/repository.matelotri./'
+REPOZIPURL = 'https://actualizarcabel2-prog.github.io/repository.matelotri/'
 #########################################################
 
 #########################################################
