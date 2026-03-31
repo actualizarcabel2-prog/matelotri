@@ -1,0 +1,6 @@
+<settings>
+    <category label="General">
+        <setting id="first_run" type="bool" label="Primera ejecución" default="true" visible="false" />
+        <setting id="build_installed" type="bool" label="Build instalada" default="false" visible="false" />
+    </category>
+</settings>

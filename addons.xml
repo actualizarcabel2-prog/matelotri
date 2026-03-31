@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addons>
+    <addon id="plugin.video.matelotri" name="Matelotri Cinema" version="1.0.0" provider-name="Matelotri">
+        <requires>
+            <import addon="xbmc.python" version="3.0.0"/>
+            <import addon="xbmc.addon" version="21.0.0"/>
+            <import addon="script.module.requests" version="2.25.0"/>
+        </requires>
+        <extension point="xbmc.python.pluginsource" library="main.py">
+            <provides>video</provides>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <summary lang="es">🎬 Matelotri Cinema — Películas, Series, Anime y más en castellano</summary>
+            <description lang="es">Addon premium con AllDebrid. Películas, Series, Anime, Documentales, IPTV Deportes.</description>
+            <platform>all</platform>
+        </extension>
+    </addon>
+    <addon id="repository.matelotri" name="Matelotri Repo" version="1.0.0" provider-name="Matelotri">
+        <extension point="xbmc.addon.repository" name="Matelotri Repo">
+            <dir>
+                <info compressed="false">https://raw.githubusercontent.com/actualizarcabel2-prog/matelotri-repo/main/addons.xml</info>
+                <checksum>https://raw.githubusercontent.com/actualizarcabel2-prog/matelotri-repo/main/addons.xml.md5</checksum>
+                <datadir zip="true">https://raw.githubusercontent.com/actualizarcabel2-prog/matelotri-repo/main/</datadir>
+            </dir>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <summary>Repositorio Matelotri Cinema</summary>
+            <description>Repositorio oficial de addons Matelotri Cinema para Kodi</description>
+            <platform>all</platform>
+        </extension>
+    </addon>
+</addons>
