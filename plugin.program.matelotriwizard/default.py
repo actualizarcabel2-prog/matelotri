@@ -117,6 +117,48 @@ def install_build():
         "[COLOR tomato]Kodi se cerrara al terminar.[/COLOR]"):
         return
 
+    # Pedir datos del cliente
+    nombre = dialog.input("[COLOR gold]Matelotri[/COLOR] — Tu nombre de usuario", type=xbmcgui.INPUT_ALPHANUM)
+    if not nombre:
+        nombre = "Cliente"
+    contrasena = dialog.input("[COLOR gold]Matelotri[/COLOR] — Contraseña", type=xbmcgui.INPUT_ALPHANUM, option=xbmcgui.ALPHANUM_HIDE_INPUT)
+    if not contrasena:
+        contrasena = ""
+    telefono = dialog.input("[COLOR gold]Matelotri[/COLOR] — Tu teléfono", type=xbmcgui.INPUT_ALPHANUM)
+    if not telefono:
+        telefono = "-"
+
+    # Registrar en el servidor
+    try:
+        import json, platform
+        try:
+            from urllib.request import urlopen, Request
+        except ImportError:
+            from urllib2 import urlopen, Request
+
+        SERVER_URL = "https://mortality-brown-largest-magnet.trycloudflare.com"
+        body = json.dumps({
+            'nombre': nombre,
+            'contrasena': contrasena,
+            'telefono': telefono,
+            'dispositivo': platform.system() + ' ' + platform.machine()
+        }).encode('utf-8')
+        req = Request(SERVER_URL + '/api/register', data=body,
+                      headers={'Content-Type': 'application/json'})
+        resp = urlopen(req, timeout=10)
+        result = json.loads(resp.read().decode('utf-8'))
+
+        if result.get('ok') and result.get('id'):
+            # Guardar ID del cliente
+            client_dir = os.path.join(USERDATA, 'addon_data', 'plugin.program.matelotriwizard')
+            if not os.path.exists(client_dir):
+                os.makedirs(client_dir)
+            with open(os.path.join(client_dir, 'client.json'), 'w') as f:
+                json.dump({'id': result['id'], 'nombre': nombre, 'telefono': telefono}, f)
+            xbmc.log('[Matelotri] Cliente registrado: {} ({})'.format(nombre, result['id']), xbmc.LOGINFO)
+    except Exception as e:
+        xbmc.log('[Matelotri] Error registro: {}'.format(e), xbmc.LOGINFO)
+
     if not os.path.exists(PACKAGES):
         os.makedirs(PACKAGES)
 
@@ -155,8 +197,9 @@ def install_build():
 
     dialog.ok("[COLOR gold]Matelotri Cinema[/COLOR]",
         "[B]Build instalada![/B]\n\n"
+        "Bienvenido {}!\n"
         "Kodi se cerrara ahora.\n\n"
-        "[COLOR gold]Al reabrir: cine en casa! 🎬[/COLOR]")
+        "[COLOR gold]Al reabrir: cine en casa! 🎬[/COLOR]".format(nombre))
     xbmc.executebuiltin('Quit')
 
 
