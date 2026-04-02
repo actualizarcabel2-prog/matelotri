@@ -17,7 +17,7 @@ ADDONTITLE = '[COLOR gold][B]Matelotri[/B][/COLOR] [COLOR white]Wizard[/COLOR]'
 BUILDERNAME = 'Matelotri Wizard'
 EXCLUDES = [ADDON_ID, 'repository.matelotri']
 # Text File with build info in it. Please read https://github.com/a4k-openproject/plugin.program.openwizard/wiki/Installing-Builds
-BUILDFILE = 'https://raw.githubusercontent.com/actualizarcabel2-prog/repository.matelotri/main/builds.txt'
+BUILDFILE = 'https://raw.githubusercontent.com/actualizarcabel2-prog/matelotri/main/builds.txt'
 # How often you would like it to check for build updates in days
 # 0 being every startup of kodi
 UPDATECHECK = 0
